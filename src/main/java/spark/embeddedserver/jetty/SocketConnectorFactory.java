@@ -110,6 +110,7 @@ public class SocketConnectorFactory {
     private static HttpConnectionFactory createHttpConnectionFactory() {
         HttpConfiguration httpConfig = new HttpConfiguration();
         httpConfig.setRequestHeaderSize(60 * 1024);
+        httpConfig.setResponseHeaderSize(60 * 1024);
         httpConfig.setSecureScheme("https");
         httpConfig.addCustomizer(new ForwardedRequestCustomizer());
         return new HttpConnectionFactory(httpConfig);
